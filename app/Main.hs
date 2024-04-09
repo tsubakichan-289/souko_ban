@@ -134,12 +134,6 @@ putStage n_x n_y ups g = if isNothing ups
             ups' = fromJust ups
             dones = findFives ups' `intersect` g
         cls
-        moveCursor 23 1
-        print $ findFives ups'
-        moveCursor 23 2
-        print g 
-        moveCursor 23 3
-        print dones
         --mapM_ print $ ups'
         mapM_ (\(Point x y) -> putStrRedAt x y "G") g
         putStrMatrixAt 1 1 $ stage2Str ups'
